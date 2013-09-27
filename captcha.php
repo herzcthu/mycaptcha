@@ -12,10 +12,10 @@ class MY_CAPTCHA{
 //		}
 	public function my_num($rand){
 
-		//$latin = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'); 
+		//$latin = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
 		//$burmese = array('​၀', '​၁', '​၂', '​၃', '​၄', '​၅', '​၆', '​၇', '​၈', '​၉');
 		//$rand = str_replace($latin, $burmese, $rand);
-		
+
 		switch($rand){
 			case 0:
 				$burmese = "၀";
@@ -57,12 +57,12 @@ class MY_CAPTCHA{
 				$burmese = "၉";
 
 				break;
-			}	
-				$rand = mb_ereg_replace("[0-9]", $burmese, $rand);		
-		
+			}
+				$rand = mb_ereg_replace("[0-9]", $burmese, $rand);
+
 
 		//var_dump($rand);
-		return $rand;	
+		return $rand;
 	}
 	private function text(){
 		$txt = array();
@@ -101,7 +101,7 @@ class MY_CAPTCHA{
 		mb_internal_encoding("UTF-8");
 		mb_regex_encoding("UTF-8");
 		foreach($this->text as $k => $v){
-		$fs = rand(9,13); 
+		$fs = rand(9,13);
 		$a = rand(-35,35);
 		$x = 15 * $k + 3;
 		$y = 20;
@@ -119,17 +119,17 @@ class MY_CAPTCHA{
 	public function captcha($w,$h,$char_count,$font = "ayar"){
 
 		if(gettype($w) == "integer"){
-			$this->w = $w;			
+			$this->w = $w;
 		}else{
 			$this->w = 120;
 		}
 		if(gettype($h) == "integer"){
-			$this->h = $h;		
+			$this->h = $h;
 		}else{
 			$this->h = 30;
 		}
 		if(gettype($char_count) == "integer"){
-			$this->char_count = $char_count;	
+			$this->char_count = $char_count;
 		}else{
 			$this->char_count = 6;
 		}
@@ -150,4 +150,3 @@ $captcha->captcha(75,37,5,"AyarNayon");
 
 
 ?>
-  ည့့
